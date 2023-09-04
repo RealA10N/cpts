@@ -7,6 +7,9 @@ authors = [{ name = "Alon Krymgand", email = "me@alon.kr" }]
 dependencies = ["typer>=0.9", "rich>=13.0", "docker>=6.0"]
 dynamic = ["version"]
 
+[tool.setuptools]
+include-package-data = true
+
 [tool.setuptools.dynamic]
 version = { attr = "cpts.__version__" }
 
