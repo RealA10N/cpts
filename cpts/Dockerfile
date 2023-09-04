@@ -21,9 +21,7 @@ RUN set -xe && \
 
 # setup cpts
 # TODO: do not keep pip in final image.
-ENV CPTS_PATH="/cpts"
-COPY . ${CPTS_PATH}
-WORKDIR ${CPTS_PATH}
+ARG CPTS_VERSION
 RUN apt-get update && \
     apt-get install -y --no-install-recommends python3-pip && \
-    python3.11 -m pip install ${CPTS_PATH}
+    python3.11 -m pip install cpts==${CPTS_VERSION}
