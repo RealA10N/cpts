@@ -82,14 +82,19 @@ class Logger:
         self._print(label + f" [white][bold]{title}[/bold]{desc}[/white]")
 
 
-logger = Logger()
+_logger = Logger()
+
+
+def getLogger() -> Logger:
+    return _logger
+
 
 if __name__ == "__main__":
-    logger.info("operation in process", desc="running tests...")
-    logger.success("operation completed", desc="all tests have passed!")
-    logger.warning("operation failed", desc="some tests yielded warnings...")
-    logger.error("operation exited", desc="all tests have failed")
+    _logger.info("operation in process", desc="running tests...")
+    _logger.success("operation completed", desc="all tests have passed!")
+    _logger.warning("operation failed", desc="some tests yielded warnings...")
+    _logger.error("operation exited", desc="all tests have failed")
     try:
-        logger.abort("operation exited", desc="all tests have failed")
+        _logger.abort("operation exited", desc="all tests have failed")
     except typer.Exit as error:
         exit(error.exit_code)
