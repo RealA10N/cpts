@@ -1,6 +1,17 @@
 [project]
 name = "cpts"
 version = "0.1.0"
+description = "Competitive Programming Testing Suite: A modern approach for developing and testing competitive programming problems packages"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Alon Krymgand", email = "me@alon.kr" }]
+dependencies = ["typer>=0.9", "rich>=13.0", "docker>=6.0"]
+
+[project.urls]
+Homepage = "https://github.com/RealA10N/cpts"
+
+[project.scripts]
+cpts = "cpts.app:main"
 
 [tool.black]
 line-length = 80
