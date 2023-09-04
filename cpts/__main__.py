@@ -1,3 +1,3 @@
-from cpts.app import app
+from cpts.app import main
 
-app(prog_name="cpts")
+main()
