@@ -24,4 +24,5 @@ RUN set -xe && \
 ARG CPTS_VERSION
 RUN apt-get update && \
     apt-get install -y --no-install-recommends python3-pip && \
+    python3.11 -m pip install -U pip && \
     python3.11 -m pip install cpts==${CPTS_VERSION}
