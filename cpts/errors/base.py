@@ -16,13 +16,7 @@ class CPTSBaseError(Exception):
         self.exit_code = exit_code
 
     def __str__(self) -> str:
-        return str(
-            Text(
-                "[bold white on red] :boom: Error [/] [bold]"
-                + f"{self.title}:[/bold] {self.description}"
-                + f"[italic bright_black] exited with code {self.exit_code}[/]"
-            )
-        )
+        return f"{self.title}: {self.description}"
 
     def __rich__(self) -> str:
         return Group(
